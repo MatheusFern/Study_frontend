@@ -1,0 +1,98 @@
+/* app global css */
+p.text-h1{
+  color:white;
+  font-weight: 600;
+  font-size: 170px;
+}
+p.text-h4{
+  color:white;
+  font-weight: 600;
+  font-size: 50px;
+  margin-top: 60px;
+}
+.layout {
+  background: linear-gradient(45deg, #20d5f2, #69ef84);
+  align-items: center;
+}
+
+.text-h2{
+  color: #707070;
+  font-weight: 500;
+}
+.q-pt-none{
+  margin-top: 10px;
+}
+
+.box{
+  justify-content: space-between;
+  
+ 
+}
+.row{
+  align-items: center;
+  justify-content: space-evenly;
+}
+.my-card{
+  align-items: center;
+  width: 45.75rem;
+  height: 51.4375rem;
+  border-radius: 60px;
+  padding: 105px 129px 106px;
+  justify-content: space-evenly;
+}
+.Sign{
+  color: #39E57E;
+  font-weight: 600;
+  font-size: 24px;
+
+}
+.Forgot{
+  font-weight: 400;
+  font-size: 18px;
+}
+.BTN{
+  align-self: center;
+}
+.full-width{
+  height: 55px;
+}
+.check{
+  padding-left: 10px;
+}
+.account{
+  justify-content: space-between;
+  flex-direction: column;
+  
+}
+.col{
+ justify-content: center;
+ 
+}
+.Marca-Home{
+  display: flex;
+  padding-left: 10rem;
+}
+.my-card1{
+  border-radius: 20px;
+  width: 1920px;
+  height: 200px;
+}
+.SubBanner{
+  display: flex;
+}
+.text-h4, .text-h5{
+  color: #707070;
+}
+/*Sign in */
+.layout2{
+  background: linear-gradient(45deg, #20d5f2, #69ef84);
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+.Inputs-SignIn{
+  margin-top: 1rem;
+}
+.subTexts{
+  margin-top: 1rem;
+}
