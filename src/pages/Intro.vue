@@ -32,6 +32,7 @@
         
       <q-card-actions >
         <q-btn
+        to=proflist
       size="22px"
       class="q-px-xl q-py-xs"
       color="light-blue-5"

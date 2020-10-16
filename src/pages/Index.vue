@@ -27,17 +27,18 @@
                  <q-checkbox class="check" v-model="teal" label="Lembrar-me" color="green-6" />
               
               <q-card-section >
-                <router-link :to="{ path: 'home' }">
-                <q-btn color="green-6" class="full-width" label="entrar" />
-                </router-link>
+                
+                <q-btn  to=home color="green-6" class="full-width" label="entrar" />
+                
               </q-card-section>
               
               <div class="account">
               <div class="row">
-                <router-link :to="{ path: 'Signin' }">
-                <q-btn flat style="color: #39E57E" label="Cadastre-se" />
-                </router-link>
-                <q-btn flat style="color: black" label="Esqueceu a senha?" />
+                
+                <q-btn  to=/signin flat style="color: #39E57E" label="Cadastre-se" />
+                
+                
+                <q-btn to=/Forgot flat style="color: black" label="Esqueceu a senha?" />
                
               </div>
                 <div class="row">

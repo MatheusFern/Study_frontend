@@ -17,14 +17,15 @@
               <q-input class="Inputs-SignIn" outlined v-model="text" label="Senha" />
             </q-card-section>
             <q-card-section>
-              <router-link :to="{ path: 'home' }">
+              
               
               <q-btn
+                to=home
                 color="light-blue-5"
                 class="full-width"
                 label="Cadastrar"
               />
-              </router-link>
+              
             </q-card-section>
           </q-card>
         </div>

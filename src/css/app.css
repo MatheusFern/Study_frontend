@@ -13,6 +13,8 @@ p.text-h4{
 .layout {
   background: linear-gradient(45deg, #20d5f2, #69ef84);
   align-items: center;
+  display: flex;
+  
 }
 
 .text-h2{
@@ -95,4 +97,49 @@ p.text-h4{
 }
 .subTexts{
   margin-top: 1rem;
+}
+/*proflist */
+
+.layoutProf {
+  background: linear-gradient(45deg, #20d5f2, #69ef84);
+  align-items: center;
+  display: flex;
+  
+  
+  
+}
+.Text-Tutores{
+  color: white;
+  padding: 15px 15px 15px 15px ;
+  font-size: 64px;
+  font-weight: 600;
+}
+.Selections {
+  display: flex;
+  
+  
+}
+.Selection{
+  width:536px ;
+  height: 115px;
+  
+  padding: 15px 15px 15px 15px ;
+  margin: 15px 15px 15px 15px;
+  border-radius: 5px;
+
+}
+
+.Text-TC{
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+.my-card-Prof{
+  border-radius: 40px;
+  padding: 30px 45px 0px 45px ;
+  
+}
+.Text-Prof{
+ font-size: 20px;
+ color: #8F8F8F;
 }

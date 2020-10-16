@@ -25,11 +25,13 @@
               />
             </q-card-section>
             <q-card-section>
-              <q-btn
+              
+              <q-btn to=/
                 color="light-blue-5"
                 class="full-width"
-                label="Cadastrar"
+                label="Enviar"
               />
+              
             </q-card-section>
           </q-card>
         </div>

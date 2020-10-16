@@ -22,6 +22,13 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Intro.vue') }
     ]
+  },
+  {
+    path: '/Proflist',
+    component: () => import('layouts/List.vue'),
+    children: [
+      { path: '', component: () => import('pages/ProfessorList.vue')}
+    ]
   }
 ]
 
