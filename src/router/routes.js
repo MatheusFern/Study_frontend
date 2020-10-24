@@ -27,7 +27,9 @@ const routes = [
     path: '/Proflist',
     component: () => import('layouts/List.vue'),
     children: [
-      { path: '', component: () => import('pages/ProfessorList.vue')}
+      { path: '', component: () => import('pages/ProfessorList.vue')},
+      { path: '/ProfessorAdd', component: () => import('pages/Professor.vue')},
+      { path: '/Profile', component:() => import('pages/Profprofile.vue')}
     ]
   }
 ]

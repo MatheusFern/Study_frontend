@@ -1,11 +1,8 @@
 <template>
   <q-page padding class="layoutProf">
     <q-layout>
-      <!-- content -->
-      <div class="Text-Tutores-ADD">Voce quer dar aulas?</div>
-      <div class="Text-Tutores-ADD-Sub">
-        Tudo que precisar fazer é preencher o formulário de inscrição
-      </div>
+    <!-- content -->
+    
 
       <q-card class="my-card-Prof" flat bordered>
         <div class="Dados">Seus Dados</div>
@@ -19,7 +16,7 @@
           </q-item-section>
 
           <q-item-section>
-            <q-item-label>Adicionar imagem de perfil</q-item-label>
+            <q-item-label>Alterar imagem de perfil</q-item-label>
           </q-item-section>
         </q-item>
 
@@ -81,7 +78,7 @@
           <div class="Footer-Text-1">Importante!</div>
           <div class="Footer-Text-2">Preencha todos os dados corretamente.</div>
           </div>
-          <q-btn color="green-13" text-color="white" label="Salvar Cadastro" />
+          <q-btn color="green-13" text-color="white" label="Atualizar Cadastro" />
         </q-card-section>
       </q-card>
     </q-layout>
@@ -98,5 +95,5 @@ export default {
       
     }
   }
-};
+}
 </script>

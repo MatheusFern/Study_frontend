@@ -39,6 +39,7 @@
       label="Estudar"
     />
         <q-btn
+        to=ProfessorAdd
       size="22px"
       class="q-px-xl q-py-xs"
       color="green-13"

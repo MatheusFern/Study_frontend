@@ -104,8 +104,8 @@ p.text-h4{
   background: linear-gradient(45deg, #20d5f2, #69ef84);
   align-items: center;
   display: flex;
-  
-  
+  padding-left: 3rem;
+  padding-right: 3rem;
   
 }
 .Text-Tutores{
@@ -136,10 +136,66 @@ p.text-h4{
 }
 .my-card-Prof{
   border-radius: 40px;
-  padding: 30px 45px 0px 45px ;
+  padding: 30px 45px 30px 45px ;
+  margin-top: 25px;
   
 }
 .Text-Prof{
  font-size: 20px;
  color: #8F8F8F;
+}
+.Price{
+  flex-direction: row;
+}
+/*proflist ADD */
+.Text-Tutores-ADD{
+  color: white;
+  padding: 15px 15px 0px 15px ;
+  font-size: 64px;
+  font-weight: 600;
+}
+.Text-Tutores-ADD-Sub{
+  color: white;
+  padding: 0px 15px 15px 15px ;
+  font-size: 30px;
+  font-weight: 600;
+}
+.Dados{
+  font-weight: 600;
+  font-size: 35px;
+  padding-top: 10px;
+}
+.item{
+  display: flex;
+  width:300px ;
+  height: 115px;
+}
+.Dados-What{
+  font-size: 20px;
+  color: #B1B1B1;
+}
+.Campo-What{
+  width:250px ;
+  height: 100px;
+}
+.Dados-Materia{
+  font-size: 20px;
+  color: #B1B1B1;
+  padding-top: 15px;
+}
+.Footer-Prof{
+  display: flex;
+  justify-content: space-around;
+  background-color: #e6e6e6;
+  margin-top: 20px;
+}
+.Footer-Text-1{
+  color: #62EC8E;
+  font-weight: 600;
+  font-size: 25px;
+}
+.Footer-Text-2{
+  color: #8D8D8D;
+  font-weight: 500;
+  font-size: 15px;
 }
