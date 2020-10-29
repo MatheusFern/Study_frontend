@@ -1,4 +1,7 @@
 /* app global css */
+.perfilBTN{
+  font-size: 20px;
+}
 p.text-h1{
   color:white;
   font-weight: 600;
@@ -85,6 +88,8 @@ p.text-h4{
 .text-h4, .text-h5{
   color: #707070;
 }
+/*Header*/
+
 /*Sign in */
 .layout2{
   background: linear-gradient(45deg, #20d5f2, #69ef84);
@@ -198,4 +203,108 @@ p.text-h4{
   color: #8D8D8D;
   font-weight: 500;
   font-size: 15px;
+}
+/*Card-Service*/
+.Card-Service{
+  height: 500px;
+  width: 900px;
+
+}
+.Services-Options{
+ display: flex; 
+ justify-content: space-around;
+ flex-wrap: wrap;
+ margin: 20px;
+
+}
+.Plano-1{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 150px;
+  height: 250px;
+  border-radius: 25px;
+  padding: 15px;
+  font-family: 'Roboto';
+  
+  font-weight: 600;
+  border: 3px solid #F56AF0;
+  color: #F56AF0;
+  
+}
+.Plano-2{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 150px;
+  height: 250px;
+  color: #20D5F2;
+  border-radius: 25px;
+  padding: 15px;
+ 
+  font-family: 'Roboto';
+ 
+  font-weight: 600;
+  border: 3px solid #20D5F2;
+}
+.Plano-3{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 150px;
+  height: 250px;
+  
+  border-radius: 25px;
+  padding: 15px;
+  
+  font-family: 'Roboto';
+ 
+  font-weight: 600;
+  border: 3px solid #69EF85;
+  color: #69EF85;
+  
+}
+.textTitle{
+  font-size: 25px;
+  font-family: 'Roboto';
+  
+}
+/*Layout de recursos do aluno*/
+.Layout-Resources{
+  background: linear-gradient(45deg, #20d5f2, #69ef84);
+  align-items: center;
+  display: flex;
+}
+.my-card-Resources{
+  display: flex;
+  border-radius: 25px;
+ 
+}
+.Resources-Text-T{
+  font-size: 30px;
+  padding: 15px;
+  color: #838383;
+
+}
+.Resources-Text-Sub{
+  font-size: 25px;
+  padding-bottom: 15px;
+  color: #838383;
+
+}
+.RecursoV{
+  display: flex;
+  flex-direction: row;
+ 
+  align-items: center;
+  padding: 15px 0px 10px 15px;
+}
+.Group-Text-R{
+  font-weight: 400;
+  color: #838383;
+  font-size: 30px;
+  padding-left: 15px;
 }

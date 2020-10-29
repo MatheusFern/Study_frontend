@@ -1,6 +1,13 @@
 <template>
   <q-page class="layout" padding>
+    
     <q-layout >
+      <div>
+        <q-avatar>
+            <img src="~assets/Novak.jpg">
+          </q-avatar>
+      <q-btn to=/Profile class="perfilBTN" flat rounded color="white" label="Novak" />
+      </div>
       <!-- content -->
       <div class="row">
         <div class="col">

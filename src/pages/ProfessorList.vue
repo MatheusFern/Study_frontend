@@ -83,10 +83,52 @@
           >
             <q-card >
               <q-card-section> Preço/Hora: R$ 200,00 </q-card-section>
-              <q-btn outline rounded color="green-13" label="Entrar em contato" />
+              <q-btn outline rounded color="green-13" label="Entrar em contato" @click="alert = true" />
             </q-card>
           </q-expansion-item>
         </q-list>
+        <!-- Modal/Dialog de assinaturas -->
+        <q-dialog  v-model="alert">
+      <q-card class="Card-Service">
+        <q-card-section>
+          <div class="text-h4">Assine um dos planos para ter prioridade</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          <div class="Services-Options">
+            
+            <div class="Plano-1">
+                <div class="textTitle">R$19,90</div>
+              <q-separator />
+                <li>prioridade pelo professor</li>
+                
+            </div>
+            <div class="Plano-2">
+              <div class="textTitle">R$39,90</div>
+              <q-separator />
+              <li>prioridade pelo professor</li>
+              <li>aulas gravadas</li>
+            </div>
+            <div class="Plano-3">
+              <div class="textTitle">R$59,90</div>
+              <q-separator />
+              <li>prioridade pelo professor</li>
+              <li>aulas gravadas</li>
+              <li>conteúdo exclusivo do professor</li>
+            </div>
+            <q-checkbox v-model="val1" />
+            <q-checkbox v-model="val2" />
+            <q-checkbox v-model="val3" />
+          </div>
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn  label="assinar" color="green-13" v-close-popup   />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+
       </q-card>
 
       <q-card class="my-card-Prof" flat bordered>
@@ -148,6 +190,10 @@ export default {
   // name: 'PageName',
   data() {
     return {
+      val1: true,
+      val2: false,
+      val3: false,
+      alert: false,
       modelM: null,
       modelD: null,
       modelH: null,
