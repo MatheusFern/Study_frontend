@@ -20,7 +20,8 @@ const routes = [
     path: '/Home',
     component: () => import('layouts/Home.vue'),
     children: [
-      { path: '', component: () => import('pages/Intro.vue') }
+      { path: '', component: () => import('pages/Intro.vue') },
+      { path: '/planos', component: () => import('pages/Plans.vue') },
     ]
   },
   {
