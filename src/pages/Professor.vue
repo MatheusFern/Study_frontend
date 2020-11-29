@@ -25,11 +25,11 @@
 
         <div class="Campo-What">
           <div class="Dados-What">Whatsapp</div>
-          <q-input filled v-model="ph" placeholder="(    ) _ ____ - ____" />
+          <q-input filled v-model="number" placeholder="(    ) _ ____ - ____" />
         </div>
         <div class="Dados-What">
           Bibliografia
-          <q-input v-model="text" filled type="textarea" />
+          <q-input v-model="resume" filled type="textarea" />
         </div>
         <div class="Dados">Sobre a aula</div>
         <q-separator />
@@ -38,7 +38,7 @@
           <div class="Dados-Materia">Materia</div>
           <q-input
             filled
-            v-model="text"
+            v-model="materia"
             
             style="max-width: 300px"
           />
@@ -47,7 +47,7 @@
           <div class="Dados-Materia">Custo da sua hora aula</div>
           <q-input
             filled
-            v-model="text"
+            v-model="price"
             
             style="max-width: 300px"
           />
@@ -58,11 +58,11 @@
         <q-separator />
         <div>
           <div class="Dados-Materia">Dia disponivel</div>
-          <q-select filled v-model="model" :options="Dia" label="Escolha um dia" style="max-width: 200px" />
+          <q-select filled v-model="day" :options="Dia" label="Escolha um dia" style="max-width: 200px" />
           <div class="Dados-Materia">Inicio</div>
           <q-input
             filled
-            v-model="text"
+            v-model="horaInicial"
             
             style="max-width: 300px"
           />
@@ -71,7 +71,7 @@
           <div class="Dados-Materia">Fim</div>
           <q-input
             filled
-            v-model="text"
+            v-model="horaFinal"
             
             style="max-width: 300px"
           />
@@ -81,7 +81,7 @@
           <div class="Footer-Text-1">Importante!</div>
           <div class="Footer-Text-2">Preencha todos os dados corretamente.</div>
           </div>
-          <q-btn color="green-13" text-color="white" label="Salvar Cadastro" />
+          <q-btn v-on:click="setProf" color="green-13" text-color="white" label="Salvar Cadastro" />
         </q-card-section>
       </q-card>
     </q-layout>
@@ -93,9 +93,40 @@ export default {
   // name: 'PageName',
   data(){
     return {
-      model: null,
+      number: '',
+      resume: '',
+      materia: '',
+      price: '',
+      horaInicial: '',
+      horaFinal: '',
       Dia: ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"],
       
+    }
+    
+  },
+  mounted(){ 
+    this.setProf();
+  },
+  methods: {
+    setProf() {
+      this.$axios
+      .post("https://jsonplaceholder.typicode.com/posts", {
+        userId:1,
+        parametro1:this.number,
+        parametro2:this.resume,
+        parametro3:this.materia,
+        parametro4:this.price,
+        parametro5:this.horaInicial,
+        parametro6:this.horaFinal
+
+      })
+      .then((res) => {
+          this.profs = res.data;
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }
 };
