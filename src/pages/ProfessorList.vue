@@ -3,10 +3,10 @@
     <q-layout class="All">
       <div>
         <q-avatar>
-          <img src="~assets/Novak.jpg" />
+          <img src="~assets/profileW.svg" />
         </q-avatar>
         <q-btn to=/Profile class="perfilBTN" flat rounded color="white"
-        label="Novak" />
+        label="Usuario" />
       </div>
       <!-- content -->
 
@@ -47,7 +47,7 @@
       <!-- Card de professores -->
       <q-card
         v-for="prof in profs"
-        v-bind:key="prof.movies"
+        v-bind:key="prof.id"
         class="my-card-Prof"
         flat
         bordered
@@ -55,13 +55,13 @@
         <q-item class="item">
           <q-item-section avatar>
             <q-avatar>
-              <img src="~assets/Mel.jpg" />
+              <img src="~assets/profile.svg" />
             </q-avatar>
           </q-item-section>
 
           <q-item-section>
-            <q-item-label>Mellanye Klayn {{ prof.title }}</q-item-label>
-            <q-item-label caption> Matemática </q-item-label>
+            <q-item-label>{{ prof.user.username }}</q-item-label>
+            <q-item-label caption>{{ prof.subject }} </q-item-label>
           </q-item-section>
         </q-item>
 
@@ -71,11 +71,11 @@
             elementum sit amet. Praesent faucibus vulputate condimentum.
             Praesent sit amet est gravida, mattis odio et, cursus nisi. Etiam
             porttitor ligula vel quam bibendum, a scelerisque metus pharetra.
-            <br />
-            Suspendisse lorem ligula, porta ac luctus eget, semper tempus risus.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut
-            feugiat velit. Donec ultrices dui lacus. Integer dapibus odio nec
-            faucibus gravida.
+
+            <div class="Footer-Text-3">Consulte o professor para checar sua disponibilidade </div>
+            <div >
+             
+            </div>
           </q-card-section>
         </q-card-section>
 
@@ -88,7 +88,7 @@
             <q-card-section class="Footer-Prof">
               <div>
                 <div class="Footer-Text-1">Preço hora aula!</div>
-                <div class="Footer-Text-2">R$200,00</div>
+                <div class="Footer-Text-2">R${{ prof.cost }},00</div>
               </div>
               <q-btn
                 color="green-13"
@@ -101,7 +101,21 @@
         </q-list>
         <!-- Modal/Dialog de assinaturas -->
         <q-dialog v-model="alert">
-          <q-card class="Card-Service"> </q-card>
+          <q-card class="Card-Service">
+            <div class="row no-wrap items-center">
+              <div class="col text-h6 ellipsis">Email para contato</div>
+            </div>
+            <div class="Card-Contact">
+              {{ prof.user.email }}
+            </div>
+            <q-btn
+              class="BTN"
+              color="green-13"
+              text-color="white"
+              label="Fechar"
+              @click="alert = false"
+            />
+          </q-card>
         </q-dialog>
       </q-card>
     </q-layout>
@@ -131,6 +145,7 @@ export default {
       Horario: ["8h - 9h", "9h - 10h", "10h - 11h", "11h - 12h", "12h - 13h"],
 
       profs: [],
+      schedules: [],
     };
   },
   mounted() {
@@ -139,9 +154,11 @@ export default {
   methods: {
     getPosts() {
       this.$axios
-        .get("https://jsonplaceholder.typicode.com/posts")
+        .get("http://localhost:3333/classes")
         .then((res) => {
           this.profs = res.data;
+      
+          this.schedules = res.data
           console.log(res.data);
         })
         .catch((err) => {

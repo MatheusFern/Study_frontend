@@ -4,9 +4,9 @@
     <q-layout >
       <div>
         <q-avatar>
-            <img src="~assets/Novak.jpg">
+            <img src="~assets/profileW.svg">
           </q-avatar>
-      <q-btn to=/Profile class="perfilBTN" flat rounded color="white" label="Novak" />
+      <q-btn to=/Profile class="perfilBTN" flat rounded color="white" label="Usuario" />
       </div>
       <!-- content -->
       <div class="row">

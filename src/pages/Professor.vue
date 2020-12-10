@@ -14,7 +14,7 @@
         <q-item class="item">
           <q-item-section avatar>
             <q-avatar>
-              <img src="~assets/Novak.jpg" />
+              <img src="~assets/profile.svg" />
             </q-avatar>
           </q-item-section>
 
@@ -33,24 +33,14 @@
         </div>
         <div class="Dados">Sobre a aula</div>
         <q-separator />
-        <div >
+        <div>
           <div class="campo1">
-          <div class="Dados-Materia">Materia</div>
-          <q-input
-            filled
-            v-model="materia"
-            
-            style="max-width: 300px"
-          />
+            <div class="Dados-Materia">Materia</div>
+            <q-input filled v-model="materia" style="max-width: 300px" />
           </div>
           <div>
-          <div class="Dados-Materia">Custo da sua hora aula</div>
-          <q-input
-            filled
-            v-model="price"
-            
-            style="max-width: 300px"
-          />
+            <div class="Dados-Materia">Custo da sua hora aula</div>
+            <q-input filled v-model="price" style="max-width: 300px" />
           </div>
         </div>
 
@@ -58,30 +48,33 @@
         <q-separator />
         <div>
           <div class="Dados-Materia">Dia disponivel</div>
-          <q-select filled v-model="day" :options="Dia" label="Escolha um dia" style="max-width: 200px" />
+          <q-input
+            filled
+            v-model="day"
+            :options="day"
+            label="Escolha um dia"
+            style="max-width: 200px"
+          />
           <div class="Dados-Materia">Inicio</div>
-          <q-input
-            filled
-            v-model="horaInicial"
-            
-            style="max-width: 300px"
-          />
-          </div>
-          <div>
+          <q-input filled v-model="horaInicial" style="max-width: 300px" />
+        </div>
+        <div>
           <div class="Dados-Materia">Fim</div>
-          <q-input
-            filled
-            v-model="horaFinal"
-            
-            style="max-width: 300px"
-          />
-          </div>
+          <q-input filled v-model="horaFinal" style="max-width: 300px" />
+        </div>
         <q-card-section class="Footer-Prof">
           <div>
-          <div class="Footer-Text-1">Importante!</div>
-          <div class="Footer-Text-2">Preencha todos os dados corretamente.</div>
+            <div class="Footer-Text-1">Importante!</div>
+            <div class="Footer-Text-2">
+              Preencha todos os dados corretamente.
+            </div>
           </div>
-          <q-btn v-on:click="setProf" color="green-13" text-color="white" label="Salvar Cadastro" />
+          <q-btn
+            v-on:click="setProf"
+            color="green-13"
+            text-color="white"
+            label="Salvar Cadastro"
+          />
         </q-card-section>
       </q-card>
     </q-layout>
@@ -91,43 +84,46 @@
 <script>
 export default {
   // name: 'PageName',
-  data(){
+  data() {
     return {
-      number: '',
-      resume: '',
-      materia: '',
-      price: '',
-      horaInicial: '',
-      horaFinal: '',
-      Dia: ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"],
-      
-    }
-    
+      number: "",
+      resume: "",
+      materia: "",
+      price: "",
+      horaInicial: "",
+      horaFinal: "",
+      day: "",
+    };
   },
-  mounted(){ 
+  mounted() {
     this.setProf();
   },
   methods: {
     setProf() {
       this.$axios
-      .post("https://jsonplaceholder.typicode.com/posts", {
-        userId:1,
-        parametro1:this.number,
-        parametro2:this.resume,
-        parametro3:this.materia,
-        parametro4:this.price,
-        parametro5:this.horaInicial,
-        parametro6:this.horaFinal
+        .post("http://localhost:3333/classes", {
+          userId: 1,
+          subject: this.materia,
+          cost: this.price,
 
-      })
-      .then((res) => {
+          whatsapp: this.number,
+          bio: this.resume,
+          schedule: [
+            {
+              week_day: this.day,
+              to: this.horaInicial,
+              from: this.horaFinal,
+            },
+          ],
+        })
+        .then((res) => {
           this.profs = res.data;
           console.log(res.data);
         })
         .catch((err) => {
           console.log(err);
         });
-    }
-  }
+    },
+  },
 };
 </script>

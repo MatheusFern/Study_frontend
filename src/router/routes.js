@@ -31,7 +31,8 @@ const routes = [
       { path: '', component: () => import('pages/ProfessorList.vue')},
       { path: '/ProfessorAdd', component: () => import('pages/Professor.vue')},
       { path: '/Profile', component:() => import('pages/Profprofile.vue')},
-      { path: '/Resources', component:() => import('pages/Resource.vue')}
+      { path: '/Resources', component:() => import('pages/Resource.vue')},
+      { path: '/Great', component:() => import('pages/Confirmation.vue')}
     ]
   }
 ]

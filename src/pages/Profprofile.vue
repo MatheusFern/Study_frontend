@@ -11,7 +11,7 @@
         <q-item class="item">
           <q-item-section avatar>
             <q-avatar>
-              <img src="~assets/Novak.jpg" />
+              <img src="~assets/profile.svg" />
             </q-avatar>
           </q-item-section>
 
@@ -22,11 +22,11 @@
 
         <div class="Campo-What">
           <div class="Dados-What">Whatsapp</div>
-          <q-input filled v-model="ph" placeholder="(    ) _ ____ - ____" />
+          <q-input filled v-model="number" placeholder="( 81 ) 9-9888-4622 " />
         </div>
         <div class="Dados-What">
           Bibliografia
-          <q-input v-model="text" filled type="textarea" />
+          <q-input v-model="resume" filled type="textarea" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut sem mollis sem tempor maximus. Donec interdum nunc vitae mauris cursus sollicitudin. Ut dolor justo, placerat et lorem et" />
         </div>
         <div class="Dados">Sobre a aula</div>
         <q-separator />
@@ -35,8 +35,8 @@
           <div class="Dados-Materia">Materia</div>
           <q-input
             filled
-            v-model="text"
-            
+            v-model="materia"
+            placeholder="Sociologia"
             style="max-width: 300px"
           />
           </div>
@@ -44,8 +44,8 @@
           <div class="Dados-Materia">Custo da sua hora aula</div>
           <q-input
             filled
-            v-model="text"
-            
+            v-model="price"
+            placeholder="R$50,00"
             style="max-width: 300px"
           />
           </div>
@@ -55,12 +55,12 @@
         <q-separator />
         <div>
           <div class="Dados-Materia">Dia disponivel</div>
-          <q-select filled v-model="model" :options="Dia" label="Escolha um dia" style="max-width: 200px" />
+          <q-select filled v-model="model" :options="day" label="Escolha um dia" style="max-width: 200px" />
           <div class="Dados-Materia">Inicio</div>
           <q-input
             filled
-            v-model="text"
-            
+            v-model="horaInicial"
+            placeholder="14:00h"
             style="max-width: 300px"
           />
           </div>
@@ -68,8 +68,8 @@
           <div class="Dados-Materia">Fim</div>
           <q-input
             filled
-            v-model="text"
-            
+            v-model="horaFinal"
+            placeholder="15:00h"
             style="max-width: 300px"
           />
           </div>
@@ -91,6 +91,13 @@ export default {
   data(){
     return {
       model: null,
+      number: "",
+      resume: "",
+      materia: "",
+      price: "",
+      horaInicial: "",
+      horaFinal: "",
+      day: "",
       Dia: ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"],
       
     }

@@ -21,15 +21,15 @@
               </q-card-section>
               <div class="flex-break q-py-md"></div>
               <q-card-section class="q-pt-none">
-                <q-input outlined v-model="text" label="E-mail" />
-                <q-input outlined v-model="text" label="Senha" />
+                <q-input outlined v-model="Email" label="E-mail" />
+                <q-input outlined v-model="Password" label="Senha" />
               </q-card-section>
 
                  <q-checkbox class="check" v-model="teal" label="Lembrar-me" color="green-6" />
               
               <q-card-section >
                 
-                <q-btn  to=home color="green-6" class="full-width" label="entrar" />
+                <q-btn v-on:click="setLogin"  to=home color="green-6" class="full-width" label="entrar" />
                 
               </q-card-section>
               
@@ -61,8 +61,27 @@ export default {
   data() {
     return {
       teal: true,
-    };
+      Email:'',
+      Password:''
+    }
+    
   },
+ mounted(){
+   this.setLogin();
+ },
+ methods:{
+   setLogin(){
+     this.$axios
+     .post("http://localhost:3333/user/login", {
+       email:this.Email,
+       password:this.Password
+     })
+     .then((res) => {
+          this.profs = res.data;
+          console.log(res.data);
+        })
+   }
+ }
 };
 </script>
 
